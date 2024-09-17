@@ -89,7 +89,7 @@ int main() {
   printf("Value at %d in the list?: %d\n", 12, list_get_elem_at(mylist, 12));
   printf("Value at %d in the list?: %d\n", 7, list_get_elem_at(mylist, 7));
   printf("Index of %d?: %d\n", 70, list_get_index_of(mylist, 70));
-  printf("Index of %d?: %d\n", 20, list_get_index_of(mylist, 20));
+  printf("Index of %d?: %d\n", 20, list_get_index_of(mylist, 50));
   printf("Index of %d?: %d\n", 0, list_get_index_of(mylist, 0));
   printf("Index of %d?: %d\n", 10, list_get_index_of(mylist, 10));
   printf("Index of %d?: %d\n", 90, list_get_index_of(mylist, 90));

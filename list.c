@@ -228,6 +228,6 @@ int list_get_index_of(list_t *l, elem value) {
     current = current->next;
     currentIndex++;
   }
-  return -1; 
+  return -1; //return -1 if the index doesn't exist
 }
 
