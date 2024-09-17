@@ -7,7 +7,7 @@
 #include <stdbool.h>
 
 /* Defines the type of the elements in the linked list. You may change this if
- * you want */
+ * you want! */
 typedef int elem;
 
 /* Defines the node structure. Each node contains its element, and points to the
