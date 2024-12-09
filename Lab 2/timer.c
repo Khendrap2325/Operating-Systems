@@ -1,37 +1,47 @@
+/* hello_signal.c */
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
 #include <unistd.h>
 #include <time.h>
 
-
 volatile sig_atomic_t alarm_counter = 0;
- time_t start_time;
+time_t start_time;
 
-//signal handler
-void handler(int signum){
+void handler(int signum)
+{ //signal handler
   alarm_counter++;
-  alarm(1);
+  alarm(1); 
 }
 
-void sigint_handler(int signum){
-  time_t end_time = time(NULL);
-  printf("Timer started\n");
-  printf("Number of alarms recieved: %d\n", alarm_counter);
-  printf("Total time: %ld seconds\n", end_time - start_time);
-  exit(0);
+void sigint_handler(int signum) 
+{
+  time_t end_time = time(NULL); 
+  printf("Number of alarms received: %d\n", alarm_counter);
+  printf("Total execution time: %ld seconds\n", end_time - start_time);
+  exit(0); // Exit the program
 }
 
 
-int main( int argc, char* argv[]){
+
+int main(int argc, char *argv[]) 
+{
+  // Record the start time
   start_time = time(NULL);
-  signal(SIGALRM, handler); // register handler
-  signal(SIGINT, sigint_handler);
-  alarm(1);
-  while(1){
-    // Busy wait
-    }
-  
-  return 0; //never reached
 
+  // Register the alarm handler
+  signal(SIGALRM, handler);
+
+  // Register the SIGINT handler
+  signal(SIGINT, sigint_handler);
+
+  // Schedule the first alarm
+  alarm(1);
+
+  // Main loop
+  while (1) {
+    // Busy wait, nothing else to do
+  }
+
+  return 0; // Never reached
 }
